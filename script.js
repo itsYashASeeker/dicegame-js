@@ -6,8 +6,8 @@ function play(){
     first = get_random();
     second = get_random();
     
-    string1 = "img/"+first+".png";
-    string2 = "img/"+second+".png";
+    string1 = first+".png";
+    string2 = second+".png";
     document.getElementById("display").innerHTML=first+" "+second;
     document.getElementById("f").src=string1;
     document.getElementById("s").src=string2;
