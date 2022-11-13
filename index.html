@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dice Game</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    
 </head>
 <body>
-    <h1>WINNER</h1>
-    <img id="f" src="6.png">
-    <img id="s" src="6.png">
-    <p id="display">6 6</p>
-    <button onclick="play()" class="play">PLAY</button>
+    <div class="fullbg">
+        <p id="idwinner" class="display">Welcome to my Dice Game!</p> 
+        <p id="idhighscore" class="highscore">Highest Score</p>
+        <img id="idjerry">
+        <hr style="position:absolute; background-color: rgba(0, 0, 0, 0.325); height: 0.2rem; width: 8rem; margin:auto; top: 8.4rem;">
+        <p id="idscore" class="score">Score: 0</p>
+        <hr style="position:absolute; background-color: rgba(0, 0, 0, 0.325); height: 0.2rem; width: 2rem; margin:auto; top: 11.4rem;">
+        <div class="dices">
+            <img id="f" class="first" src="6.png">
+            <img id="s" class="second" src="6.png">
+        </div>
+        <p id="idshowplayer" class="showplayer">Hello</p>
+        <!-- <p id="display">6 6</p> -->
+        <button class="play" onclick="play()">Play!</button> 
+    </div> 
+    <script src="script.js"></script>
 </body>
 </html>
