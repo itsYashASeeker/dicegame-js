@@ -1,14 +1,71 @@
 var player = 1;
-player = prompt("Which player are you(1 or 2) ?");
+// player = prompt("Which player are you(1 or 2) ?");
 var winner;
 var score=0;
 var highscore=0;
 var highlightdice;
 var string1;
 var stringj1;
+var jerrystate;
+
+// Highest Score hover
+var hoverhighscore = document.getElementById("idhighscore");
+hoverhighscore.addEventListener("mouseover", function(){
+    var stringhighscore = "Highest score is"+highscore;
+    let utterance = new SpeechSynthesisUtterance(stringhighscore);
+    speechSynthesis.speak(utterance);
+})
+
+// Dice hover
+var dice = document.querySelectorAll(".sdice");
+for (i=0;i<2;i++)
+{
+    dice[i].addEventListener("mouseover", function() {
+    var diceh = new Audio("whoosh.mp3");
+    diceh.volume = 1;
+    diceh.play();
+    });
+}
+
+
+
+// Play button
+var displayi = document.querySelector(".play");
+displayi.addEventListener("click", function(){
+    var dice_shake1 = new Audio("dice_shake1.mp3");
+    dice_shake1.play();
+    // let utterance = new SpeechSynthesisUtterance("Hello sound");
+    // speechSynthesis.speak(utterance);
+});
+
+
 
 var splayer = "You are Player "+player;
+var splayerh = "आप खिलाड़ी "+player+" हैं";
 document.getElementById("idshowplayer").innerHTML = splayer;
+// document.getElementById("idshowplayerh").innerHTML = splayerh;
+
+
+function handlejerry(){
+    if(jerrystate==1)
+    {
+        jerryhappy();
+    }
+    else
+    {
+        jerrysad();
+    }
+}
+
+function jerrysad(){
+    var sad1sound = new Audio("sad1.mp3");
+    sad1sound.play();
+}
+
+function jerryhappy(){
+    var happy1sound = new Audio("happy1.mp3");
+    happy1sound.play();
+}
 
 function get_random()
 {
@@ -43,12 +100,22 @@ function decide(winner){
         document.getElementById("idjerry").src = "";
         document.getElementById("idjerry").classList.remove("jerry");
         document.getElementById("idwinner").style.color = "black";
-        document.getElementById("idwinner").innerHTML="Play Again, It's a draw !!";
+        document.getElementById("idwinner").innerHTML="It's a draw !!";
     }
     else if(winner!=player){
+        
         stringj1 = "sadj"+get_jerryno()+".jpg";
-        document.getElementById("idjerry").src = stringj1;
-        document.getElementById("idjerry").classList.add("jerry");
+        var sad = document.getElementById("idjerry");
+        sad.src = stringj1;
+        sad.classList.add("jerry");
+        // Playing sound
+        // if(jerrystate==1){
+        //     happy.removeEventListener("mouseover",jerryhappy);
+        // }
+        jerrystate=0;
+        // sad.addEventListener("mouseover",jerrysad);
+        // sad.removeEventListener("mouseover",jerrysad);
+        // Sound finishes
         if(score!=0){
             score=score-1;
         }
@@ -60,8 +127,19 @@ function decide(winner){
     }
     else if(winner==player){
         stringj1 = "smilingj"+get_jerryno()+".jpg";
-        document.getElementById("idjerry").src = stringj1;
-        document.getElementById("idjerry").classList.add("jerry");
+        var happy = document.getElementById("idjerry");
+        happy.src = stringj1;
+        happy.classList.add("jerry");
+        // Playing sound
+        // sad.removeEventListener("mouseover",jerrysad);
+        // if(jerrystate==0)
+        // {
+        //     sad.removeEventListener("mouseover",jerrysad);
+        // }
+        jerrystate=1;
+        // happy.addEventListener("mouseover",jerryhappy);
+        // happy.removeEventListener("mouseover",jerryhappy);
+        // Sound finishes
         score=score+1;
         if(score>highscore){
             highscore=score;

@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Pacifico&display=swap');
 
 * {
+    
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -11,50 +12,65 @@
 body{
     margin: 0;
     padding: 0;
+    /* background: linear-gradient(0deg, rgba(0, 255, 255,1), rgba(0,255,255,0.6), rgba(0,255,255,0.3), rgba(0,255,255,0.1)); */
 }
 
 .fullbg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* position: relative; */
     margin: 0;
-    height: 100vh;
-    /* width: 100%; */
+    /* margin-top: -3.5rem; */
+    padding: 2rem;
+    min-height: 120vh;
+    width: 100%;
     background: linear-gradient(0deg, rgba(0, 255, 255,1), rgba(0,255,255,0.6), rgba(0,255,255,0.3), rgba(0,255,255,0.1));
 }
 
 .display{
-    position: absolute;
-    top: -2rem;
-    justify-content: center;
+    /* position: relative; */
+    /* top: -10rem; */
+    /* justify-content: center; */
     font-family: 'Pacifico', cursive;
     font-size: 3.5rem;
     color: rgb(50, 141, 244);
+    text-align: center;
+    margin-left: auto;
+    margin-top: 0;
     transition: transform 1s ease-in-out;
 }
 
-.display:hover{
+/* .display:hover{
     transform: scale(1.1);
-}
+} */
 
 .score{
-    position: absolute;
-    top: 6rem;
-    justify-content: center;
+    /* position: absolute; */
+    /* top: 6rem; */
+    /* justify-content: center; */
+    text-align: center;
+    /* width: fit-content; */
+    margin: 0;
+    margin-top: -0.5rem;
     font-family: 'Pacifico', cursive;
     font-size: 2rem;
     color: rgb(247, 0, 198);
 }
 
 .highscore{
-    position: absolute;
-    top: -1rem;
-    left: 1rem;
-    justify-content: center;
+    /* position: absolute; */
+    /* top: -1rem; */
+    /* left: 1rem; */
+    /* justify-content: center; */
     font-family: 'Pacifico', cursive;
     font-size: 1.7rem;
     padding: 0.5rem;
     background: rgb(170, 245, 255);
+    text-align: center;
+    width: fit-content;
+    margin: 0;
+    margin-top: -10rem;
     color: rgb(37, 0, 247);
     border: 0.2rem solid black;
     border-radius: 1rem;
@@ -67,9 +83,11 @@ body{
     transform: rotateY(90deg) rotateX(90deg) ;
 }
 
-.jerry{
+.njerry{
     position: absolute;
+    display: none;
     top: 7rem;
+    margin: 0;
     right: 3rem;
     width: 15rem;
     height: auto;
@@ -78,13 +96,18 @@ body{
     transition: all 0.5s ease-out;
 }
 
+.jerry{
+    display: block;
+    cursor: pointer;
+}
+
 .jerry:hover{
     transform: scale(1.1);
     box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.354);
 }
 
 .dices{
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,8 +116,9 @@ body{
     border: 0.4rem solid white;
     box-shadow: 0rem 0rem 0.6rem 0.1rem rgb(0, 54, 64);
     border-radius: 1rem;
-
-    
+    width: fit-content;
+    margin: auto;
+    margin-top: 2rem;
     transition: all 1s ease-out;
 
 }
@@ -102,7 +126,8 @@ body{
 .dices:hover{
     /* transition: 0.5s ease-out; */
     background: linear-gradient(circle, rgba(255,255,255,1) 0%, rgba(64,255,221,1) 18%, rgba(77,170,255,1) 50%, rgba(64,255,221,1) 75%, rgba(255,255,255,1) 100%);
-    background: rgb(0, 113, 100);
+    background: rgb(241, 252, 255);
+    border: 0.4rem solid rgb(81, 81, 81);
     box-shadow: 0rem 0rem 0.6rem 0.5rem rgb(0, 92, 109);
 }
 
@@ -140,6 +165,8 @@ body{
 
 .first:hover{
     transform: scale(1.15);
+    box-shadow: 0 0 0.5rem 0.4rem rgba(5, 5, 5, 0.575);
+    border-radius: 1.9rem;
 }
 /* .first:hover ~ .second{
     transform: scale(0.8);
@@ -148,15 +175,15 @@ body{
 
 .second:hover{
     transform: scale(1.15);
+    box-shadow: 0 0 0.5rem 0.4rem rgba(5, 5, 5, 0.575);
+    border-radius: 1.9rem;
 }
 /* .second:hover ~ .first{
     transform: scale(0.8);
 } */
 
 .showplayer{
-    position: absolute;
-    top: 28rem;
-    justify-content: center;
+    text-align: center;
     font-family: 'Fira Sans', sans-serif;
     font-size: 1.5rem;
     font-weight: 800;
@@ -164,13 +191,15 @@ body{
 
 
 .play{
-    position: relative;
-    top: 15rem;
+    /* position: absolute; */
+    /* top: 15rem; */
     border: none;
     font-family: 'Pacifico', cursive;
     padding: 0.7rem;
     font-size: 1.5rem;
     border-radius: 1rem;
+    margin: auto;
+    margin-left: 47.5%;
     z-index: 0;
     cursor: pointer;
     transition: all 1.5s ease-out
