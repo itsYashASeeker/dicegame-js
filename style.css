@@ -147,19 +147,19 @@ body{
 
 .won{
     background: green;
-    border: 0.5rem solid green;
+    border: 0.6vw solid green;
     border-radius: 1rem;
 }
 
 .lost{
     background: red;
-    border: 0.5rem solid red;
+    border: 0.6vw solid red;
     border-radius: 1rem;
 }
 
 .draw{
     background: black;
-    border: 0.5rem solid black;
+    border: 0.6vw solid black;
     border-radius: 1rem;
 }
 
@@ -199,7 +199,10 @@ body{
     font-size: 1.5rem;
     border-radius: 1rem;
     margin: auto;
-    margin-left: 47.5%;
+    /* margin-left: 35.5%; */
+    /* margin-right: 46.5%; */
+    display: flex;
+    justify-content: center;
     z-index: 0;
     cursor: pointer;
     transition: all 1.5s ease-out
@@ -262,3 +265,43 @@ body{
     100%{background-position: 0 0;}
 }
 
+@media (max-width: 500px) {
+    .display{
+        font-size: 1.5rem;
+    }
+    .highscore{
+        margin: 0.5rem auto;
+        font-size: 1rem;
+    }
+    .dices{
+        border: 1vw solid white;
+        padding: 2vw;
+    }
+    .first{
+        width: 30vw;
+    }
+    .second{
+        margin-left: 5vw;
+        width: 30vw;
+    }
+}
+
+@media (max-width: 1200px) {
+    .fullbg{
+        padding: 1rem;
+    }
+    .highscore{
+        margin: 1rem auto;
+        width: 40%;
+        background: white;
+    }
+    .display{
+        font-size: 2rem;
+    }
+    .njerry{
+        top: 0.2rem;
+        right: 0.3rem;
+        width: 15vw;
+        border: 0.1rem solid white  ;
+    }
+}

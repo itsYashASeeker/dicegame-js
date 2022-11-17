@@ -122,7 +122,7 @@ function decide(winner){
         string1 = "Score: "+score;
         document.getElementById("idscore").innerHTML = string1;
         
-        document.getElementById("idwinner").innerHTML = "You Lost...";
+        document.getElementById("idwinner").innerHTML = "You Lost..";
         document.getElementById("idwinner").style.color = "red";
     }
     else if(winner==player){
@@ -149,7 +149,7 @@ function decide(winner){
         
         document.getElementById("idscore").innerHTML = string1;
         document.getElementById("idwinner").style.color = "green";
-        document.getElementById("idwinner").innerHTML="Hurray You Won !!";
+        document.getElementById("idwinner").innerHTML="You Won !!";
     }
 }
 
